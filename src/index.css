@@ -1,6 +1,6 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text: #d2d2d2;
+  --text-h: #fff;
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
@@ -111,10 +111,20 @@ p {
 
 #attribution {
   margin-top: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   font-size: 0.4rem;
   letter-spacing: 0.05rem;
-  opacity: 0.8;
+  font-weight: 900;
+  transition: all 3s;
+  color: var(--text);
+  opacity: 0.6;
+}
+#attribution a {
+  color: inherit;
+  transition: all 0.3s;
+}
+#attribution a:hover {
+  color: var(--text-h);
 }
 
 /*# sourceMappingURL=index.css.map */
