@@ -3,26 +3,25 @@ import linkedin_icon from './assets/linkedIn_icon.svg'
 import github_icon from './assets/github_icon.svg'
 import mail_icon from './assets/mail_icon.svg'
 import './index.scss'
-import { useState} from "react";
+import {useState} from "react";
 
 interface ImgLinkProps {
     src: string,
     imgAlt: string,
-    onClick: () => void
+    location: string
 }
 
-function ImgLink({src, imgAlt, onClick}: ImgLinkProps) {
+function ImgLink({src, imgAlt, location}: ImgLinkProps) {
     const [wasClicked, setWasClicked] = useState(false)
 
     const onLinkClicked = () => {
         setWasClicked(true)
-        setTimeout(() => {
-            onClick()}
-        , 500)
         setTimeout(() => setWasClicked(false), 2000)
     }
-    return <img className={`logo ${wasClicked ? 'growing' : ''}`} src={src} alt={imgAlt}
-                onClick={onLinkClicked}/>;
+    return <a href={location}>
+        <img className={`logo ${wasClicked ? 'growing' : ''}`} src={src} alt={imgAlt}
+             onClick={onLinkClicked}/>
+    </a>;
 }
 
 function App() {
@@ -30,10 +29,9 @@ function App() {
         <>
             <img src={bg} id="bg-photo" alt=""/>
             <div id={'logos'}>
-                <ImgLink src={github_icon} imgAlt={"github_icon"} onClick={() => {
-                             window.location.href = 'https://github.com/antonjolsson/'}}/>
-                <img className={'logo'} src={linkedin_icon} alt={'linkedin_icon'}/>
-                <img className={'logo'} src={mail_icon} alt={'mail_icon'}/>
+                <ImgLink src={github_icon} imgAlt={"github_icon"} location={'https://github.com/antonjolsson/'}/>
+                <ImgLink src={linkedin_icon} imgAlt={"linkedin_icon"} location={'https://www.linkedin.com/in/anton-j-olsson/'}/>
+                <ImgLink src={mail_icon} imgAlt={"mail_icon"} location={'mailto:ao@antolsson.se'}/>
             </div>
             <p id={'attribution'}>Photo by <a
                 href="https://unsplash.com/@yan_berthemy_photography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Yan
