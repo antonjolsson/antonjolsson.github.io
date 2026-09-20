@@ -105,6 +105,12 @@ p {
   z-index: -1;
   width: 150%;
 }
+@media screen and (orientation: portrait) {
+  #bg-photo {
+    height: 150%;
+    width: auto;
+  }
+}
 
 @keyframes fade-in {
   from {
@@ -118,7 +124,7 @@ p {
   margin-top: auto;
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  gap: 1.8rem;
   opacity: 0;
   animation: 1s fade-in 1s forwards;
 }
