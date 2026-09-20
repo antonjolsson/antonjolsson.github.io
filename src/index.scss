@@ -101,8 +101,7 @@ p {
   filter: saturate(0) blur(1.7px) brightness(0.6);
   position: fixed;
   z-index: -1;
-  width: 100%;
-  aspect-ratio: 1;
+  width: 150%;
 }
 
 @keyframes fade-in {
