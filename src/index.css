@@ -4,10 +4,8 @@
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
+  --accent: #00e1ff;
   --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -55,7 +53,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   box-sizing: border-box;
   text-transform: uppercase;
   height: 100%;
@@ -107,6 +105,44 @@ p {
   z-index: -1;
   width: 100%;
   aspect-ratio: 1;
+}
+
+#logos {
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+#logos .logo {
+  width: 2.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  box-shadow: 0 0;
+}
+#logos .logo:hover {
+  scale: 1.2;
+}
+#logos .logo:active {
+  filter: brightness(80%);
+}
+@keyframes grow {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  50% {
+    scale: 90;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+#logos .logo.growing {
+  transition: all 0.7s;
+  scale: 50;
+  opacity: 0;
 }
 
 #attribution {
