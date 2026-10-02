@@ -193,22 +193,23 @@ p {
   animation: fade-in-out 1.5s infinite alternate;
 }
 
-#attribution {
+.attributions {
   margin-top: auto;
   margin-bottom: 0.7rem;
+}
+.attributions .attribution {
   font-size: 0.4rem;
   letter-spacing: 0.05rem;
   font-weight: 900;
-  transition: all 3s;
   color: var(--text);
   opacity: 0.6;
   line-height: 0.7rem;
 }
-#attribution a {
+.attributions .attribution a {
   color: inherit;
-  transition: all 0.3s;
+  transition: color 0.3s;
 }
-#attribution a:hover {
+.attributions .attribution a:hover {
   color: var(--text-h);
 }
 
