@@ -42,6 +42,7 @@
 }
 html {
   height: 100%;
+  background: black;
 }
 
 #root {
@@ -119,6 +120,9 @@ p {
   position: fixed;
   z-index: -1;
   width: 150%;
+  /*&::view-transition {
+    animation: fade-in 1.0s forwards;
+  }*/
 }
 @media screen and (orientation: portrait) {
   #bg-photo {
@@ -204,6 +208,14 @@ p {
 }
 #attribution a:hover {
   color: var(--text-h);
+}
+
+::view-transition-old {
+  animation: fade-in 0.5s reverse forwards;
+}
+
+::view-transition-new {
+  animation: fade-in 0.5s forwards;
 }
 
 /*# sourceMappingURL=index.css.map */
