@@ -47,7 +47,7 @@ html {
   background: black;
 }
 
-#root {
+#root, main {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -63,6 +63,11 @@ html {
 body {
   margin: 0;
   height: 100%;
+}
+
+main {
+  margin: 0;
+  width: 100%;
 }
 
 h1,
@@ -115,17 +120,11 @@ p {
   position: fixed;
   z-index: -1;
   width: 150%;
-  // opacity: 0;
-  // animation: fade-in 1.0s forwards;
 
   @media screen and (orientation:portrait) {
     height: 150%;
     width: auto;
   }
-
-  /*&::view-transition {
-    animation: fade-in 1.0s forwards;
-  }*/
 }
 
 @keyframes fade-in {
@@ -203,10 +202,10 @@ p {
   }
 }
 
-::view-transition-old {
-  animation: fade-in 0.5s reverse forwards;
+::view-transition-old(.slow-fade) {
+  animation-duration: 1000ms;
 }
 
-::view-transition-new {
-  animation: fade-in 0.5s forwards;
+::view-transition-new(.slow-fade) {
+  animation-duration: 1000ms;
 }

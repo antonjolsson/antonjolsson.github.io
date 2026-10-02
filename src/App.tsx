@@ -37,7 +37,7 @@ const fetchBgImage = () => {
     if (cache.has(url)) {
         return cache.get(url)
     }
-    const img = import(url)
+    const img = import(/* @vite-ignore */ url)
     cache.set(url, img)
     return img;
 }
@@ -50,7 +50,7 @@ function BgImage() {
 }
 
 function Content() {
-    return <>
+    return <main>
         <BgImage/>
         <div id={"logos"}>
             <ImgLink src={github_icon} imgAlt={"github_icon"}
@@ -69,12 +69,12 @@ function Content() {
                 Berthemy</a> on <a
                 href="https://unsplash.com/photos/aerial-photography-of-metropolitan-area-quHB70LB5uI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </p>
-    </>
+    </main>
 }
 
 function App() {
     return (
-        <ViewTransition name={'load-bg'}>
+        <ViewTransition default={'slow-fade'}>
             <Suspense fallback={<Fallback/>}>
                 <Content />
             </Suspense>
