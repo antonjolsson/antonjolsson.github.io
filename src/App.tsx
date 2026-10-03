@@ -33,11 +33,11 @@ function Fallback() {
 const cache = new Map()
 
 const fetchBgImage = () => {
-    const url = "./assets/background-nyc.jpg"
+    const url = "nyc"
     if (cache.has(url)) {
         return cache.get(url)
     }
-    const img = import(/* @vite-ignore */ url)
+    const img = import(`./background-${url}.jpg`)
     cache.set(url, img)
     return img;
 }
